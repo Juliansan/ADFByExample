@@ -1,0 +1,9 @@
+{
+	"name": "js-adf-testsbyexample",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "032af623-2878-479d-8621-f38647b97d10",
+		"tenantId": "b5763efb-1172-4b60-a9c5-1e239812bca7"
+	}
+}
