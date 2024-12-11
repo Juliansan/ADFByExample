@@ -159,8 +159,14 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ABS_CSV_SweetTreats",
-						"type": "DatasetReference"
+						"referenceName": "ABS_CSV",
+						"type": "DatasetReference",
+						"parameters": {
+							"Container": "sampledata",
+							"Directory": ".",
+							"File": ".",
+							"LinkedServiceConnectionSecret": "jsstorageadfbyexampleConnectionString"
+						}
 					}
 				],
 				"outputs": [
