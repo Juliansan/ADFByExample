@@ -1,0 +1,58 @@
+{
+	"name": "ImportSweetTreatsAndDesserts4All",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Sweet Treats",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ImportSTFormatFolder",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"WildcardFolderPath": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/SweetTreats",
+						"WildcardFileName": "*.csv"
+					}
+				}
+			},
+			{
+				"name": "Execute Desserts4All",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute Sweet Treats",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ImportSTFormatFolder",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"WildcardFolderPath": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/Desserts4All",
+						"WildcardFileName": "*.csv"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Chapter05"
+		},
+		"annotations": []
+	}
+}
