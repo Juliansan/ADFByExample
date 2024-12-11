@@ -1,0 +1,17 @@
+{
+	"name": "adfbyexamplekvStorageblob",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "adfbyexamplekv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "jsstorageadfbyexampleConnectionString"
+			}
+		}
+	}
+}
